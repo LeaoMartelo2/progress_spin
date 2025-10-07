@@ -13,7 +13,11 @@ A simple Microsoft Powershell 7+ ([pwsh.exe](https://learn.microsoft.com/en-us/p
 Usage is very simple, just copy the `progress_spin.psm1` file to your project and 
 ```powershell
 Import-Module .\progress_spin.psm1 
+
+load_progress_spin
 ```
+
+Then do optional configuring steps
 Just read the example, configuring is very easy
 
 ### Configuration options
@@ -25,6 +29,23 @@ $global:pg_spin_progress_chars = @('/', '-', '\', '|') # default character order
 $global:pg_spin_progress_chars_color = "`e[93m"        # light yellow
 $global:pg_spin_progress_completed_color = "`e[32m"    # bright green
 $global:pg_spin_update_ms = 100                        # how long does it take to update the char
+```
+
+### printing the line
+
+(assuming you have a async job on `$job`)
+
+```ps1
+$progress_message = "Performing Task"
+while($job.State -eq 'Running'){
+    write_progress -ProgressMessage $progress_message
+}
+```
+
+after your job is finished you can do
+
+```ps1
+progress_completed -ProgressMessage $progress_message
 ```
 
 
