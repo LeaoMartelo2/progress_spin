@@ -23,7 +23,7 @@ $global:pg_spin_update_ms = 100
 function write_progress {
     param([string]$ProgressMessage)
 
-    $msg = "`r$($ProgressMessage) "
+    $msg = "`r$($ProgressMessage)                                                                          "
     $msg += "${global:pg_spin_progress_chars_color}$($global:pg_spin_progress_chars[$script:index])${Reset}"
 
     Write-Host -NoNewLine "${msg}"

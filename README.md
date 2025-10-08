@@ -48,4 +48,15 @@ after your job is finished you can do
 progress_completed -ProgressMessage $progress_message
 ```
 
+### Example progress_chars config 
 
+
+```ps1
+$global:pg_spin_progress_chars = @("⠁","⠂","⠄","⡀","⢀","⠠","⠐","⠈")
+
+$global:pg_spin_progress_chars = @("⣾","⣽","⣻","⢿","⡿","⣟","⣯","⣷")
+
+$global:pg_spin_progress_chars = @("▁","▂","▃","▄","▅","▆","▇","█","▇","▆","▅","▄","▃","▁")
+
+$global:pg_spin_progress_chars = @("⢎⡰","⢎⡡","⢎⡑","⢎⠱","⠎⡱","⢊⡱","⢌⡱","⢆⡱")
+```
